@@ -1,0 +1,19 @@
+[2017-11-08 12:16:33] local.ERROR: Command "routes" is not defined.
+
+Did you mean one of these?
+    route:cache
+    route:clear
+    route:list {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"routes\" is not defined.
+
+Did you mean one of these?
+    route:cache
+    route:clear
+    route:list at /Users/admin/blog/vendor/symfony/console/Application.php:596)
+[stacktrace]
+#0 /Users/admin/blog/vendor/symfony/console/Application.php(205): Symfony\\Component\\Console\\Application->find('routes')
+#1 /Users/admin/blog/vendor/symfony/console/Application.php(125): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /Users/admin/blog/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Users/admin/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /Users/admin/blog/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
