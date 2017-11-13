@@ -94,14 +94,11 @@
                 </div>
             </div>
             <script>
+                var socketId = Echo.socketId();
+                console.log(socketId);
                 Echo.channel('orders')
-                    .listen('.OrderCreated', (e) => {
+                    .listen('.status.updated', (e) => {
                         console.log('Hello World!', e);
-                    });
-
-                Echo.channel('what')
-                    .listen('.OrderCreated', (e) => {
-                        console.log('Hello WHAT!', e);
                     });
             </script>
         </div>

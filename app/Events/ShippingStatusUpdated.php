@@ -7,9 +7,9 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 
-class ShippingStatusUpdated implements ShouldBroadcast
+class ShippingStatusUpdated implements ShouldBroadcastNow
 {
     /**
      * Information about the shipping status update.
@@ -18,6 +18,12 @@ class ShippingStatusUpdated implements ShouldBroadcast
      */
     public $update;
 
+
+    public function __construct($update)
+    {
+        $this->update = $update;
+    }
+
     /**
      * Get the channels the event should broadcast on.
      *
@@ -25,6 +31,17 @@ class ShippingStatusUpdated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('order.1');
+        return new Channel('orders');
     }
+
+    /**
+     * The event's broadcast name.
+     *
+     * @return string
+     */
+    public function broadcastAs()
+    {
+        return 'status.updated';
+    }
+
 }

@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('ok', function () {
+    event(new \App\Events\ShippingStatusUpdated([
+        'test' => 'test',
+        'what' => 'what'
+    ]));
+});

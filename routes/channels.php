@@ -16,7 +16,8 @@
 //});
 
 Broadcast::channel('orders', function () {
-    return ['id' => 1, 'name' => 'Janzell'];
+    return true;
+    //return ['id' => 1, 'name' => 'Janzell'];
 });
 //
 //Broadcast::channel('presence-orders', function () {
